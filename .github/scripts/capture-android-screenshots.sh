@@ -27,7 +27,9 @@ for _ in $(seq 1 30); do
   fi
   sleep 1
 done
-sleep 6
+# This app shows the Flutter splash for a while on a cold emulator (the first run
+# captured only the splash after 6 s), so give it longer before the screenshot.
+sleep 25
 
 adb exec-out screencap -p > "$OUT/launch.png"
 ls -l "$OUT"
