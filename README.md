@@ -8,6 +8,12 @@ private/public repo pair; see
 [`docs/project-memory/00-project-brief.md`](docs/project-memory/00-project-brief.md)
 for the full story.
 
+## Screenshots
+
+![Services list, slot picker, deposit payment (Flutter)](docs/screenshots/booking-flow.png)
+
+_These images are illustrative mockups rendered from this repository's documented screens and API shapes, not captures of a running build. Regenerate or replace them with real captures once the app is running._
+
 ## What it does
 
 - Browse a demo studio's services and real, derived availability.
