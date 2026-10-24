@@ -10,9 +10,9 @@ for the full story.
 
 ## Screenshots
 
-![Services list, slot picker, deposit payment (Flutter)](docs/screenshots/booking-flow.png)
+![Book an appointment screen showing "Could not load services" with a Retry button](docs/screenshots/launch.png)
 
-_These images are illustrative mockups rendered from this repository's documented screens and API shapes, not captures of a running build. Regenerate or replace them with real captures once the app is running._
+_A real capture: the app's first screen on an Android emulator, produced by the manual `Screenshots` workflow (`.github/workflows/screenshots.yml`). No backend runs in CI, so the services list cannot load and the screen shows its error state with a Retry button. It is a debug build, hence the corner banner._
 
 ## What it does
 
