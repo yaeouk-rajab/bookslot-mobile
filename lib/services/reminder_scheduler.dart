@@ -28,7 +28,10 @@ class ReminderScheduler {
     const androidInit = AndroidInitializationSettings('@mipmap/ic_launcher');
     const iosInit = DarwinInitializationSettings();
     await _plugin.initialize(
-      const InitializationSettings(android: androidInit, iOS: iosInit),
+      settings: const InitializationSettings(
+        android: androidInit,
+        iOS: iosInit,
+      ),
     );
   }
 
@@ -68,11 +71,11 @@ class ReminderScheduler {
         ?.requestNotificationsPermission();
 
     await _plugin.zonedSchedule(
-      _notificationId(appointmentId),
-      'Upcoming appointment',
-      '$serviceName is coming up soon.',
-      tz.TZDateTime.from(fireAt, tz.local),
-      const NotificationDetails(
+      id: _notificationId(appointmentId),
+      title: 'Upcoming appointment',
+      body: '$serviceName is coming up soon.',
+      scheduledDate: tz.TZDateTime.from(fireAt, tz.local),
+      notificationDetails: const NotificationDetails(
         android: _androidDetails,
         iOS: DarwinNotificationDetails(),
       ),
@@ -88,12 +91,10 @@ class ReminderScheduler {
       // constraint rather than adding the exact-alarm permission prompt.
       // See 04-decisions.md D-10, D-12, D-13, D-14 and backlog #11.
       androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
-      uiLocalNotificationDateInterpretation:
-          UILocalNotificationDateInterpretation.absoluteTime,
     );
     return notificationsEnabled != false;
   }
 
   Future<void> cancelForAppointment(String appointmentId) =>
-      _plugin.cancel(_notificationId(appointmentId));
+      _plugin.cancel(id: _notificationId(appointmentId));
 }
