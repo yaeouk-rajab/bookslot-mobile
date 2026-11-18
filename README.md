@@ -1,7 +1,7 @@
 # bookslot-mobile
 
 A Flutter customer app for booking appointments and paying deposits
-against [`bookslot`](https://github.com/arb-rajab/bookslot)'s real,
+against [`bookslot`](https://github.com/yaeouk-rajab/bookslot)'s real,
 production-shaped public booking API — pointed at a seeded demo tenant, not
 real business data. This is the public, portfolio-demo half of a
 private/public repo pair; see
